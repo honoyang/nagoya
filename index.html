@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>名古屋・北陸・鈴鹿 10天9夜 親子自駕行</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --drive-color: #3498db;
+            --train-color: #27ae60;
+            --bg-color: #f5f7fa;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft JhengHei", sans-serif;
+            background-color: var(--bg-color);
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            margin: 0;
+            font-size: 2em;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.1em;
+            margin-top: 10px;
+        }
+
+        .summary-tags {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .tag {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+            color: white;
+        }
+
+        .tag.drive { background-color: var(--drive-color); }
+        .tag.train { background-color: var(--train-color); }
+
+        /* Day Card Styling */
+        .day-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            overflow: hidden;
+            border-left: 6px solid var(--primary-color);
+            page-break-inside: avoid; /* 防止列印時切斷卡片 */
+        }
+
+        .day-card.drive-mode { border-left-color: var(--drive-color); }
+        .day-card.train-mode { border-left-color: var(--train-color); }
+
+        .day-header {
+            padding: 15px 20px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .day-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .day-location {
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+
+        .timeline {
+            padding: 20px;
+        }
+
+        .event {
+            display: flex;
+            margin-bottom: 15px;
+            align-items: flex-start;
+        }
+
+        .event:last-child { margin-bottom: 0; }
+
+        .time {
+            min-width: 100px;
+            font-weight: bold;
+            color: #7f8c8d;
+            font-size: 0.95em;
+        }
+
+        .content {
+            flex: 1;
+        }
+
+        .activity {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 4px;
+        }
+
+        .details {
+            font-size: 0.95em;
+            color: #555;
+        }
+
+        .highlight {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .icon { margin-right: 5px; }
+
+        .stay-info {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed #eee;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        /* Print Optimization */
+        @media print {
+            body { background-color: white; padding: 0; }
+            .container { max-width: 100%; }
+            .day-card { box-shadow: none; border: 1px solid #eee; margin-bottom: 15px; }
+            header { box-shadow: none; margin-bottom: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>🎌 名古屋・北陸・鈴鹿 親子自駕 10天9夜</h1>
+        <div class="subtitle">成員：2大2小 (6歲 & 2歲) | 日期：6/11 - 6/20</div>
+        <div class="summary-tags">
+            <span class="tag drive">🚗 Day 1-5 自駕</span>
+            <span class="tag train">🚃 Day 6-9 電車/地鐵</span>
+        </div>
+    </header>
+
+    <div class="day-card train-mode">
+        <div class="day-header">
+            <span class="day-title">Day 0 - 6/11 (四)</span>
+            <span class="day-location">📍 抵達名古屋</span>
+        </div>
+        <div class="timeline">
+            <div class="event">
+                <div class="time">22:00</div>
+                <div class="content">
+                    <div class="activity">✈️ 抵達中部國際機場 (NGO)</div>
+                    <div class="details">出關後直接步行至機場飯店，養精蓄銳。</div>
+                </div>
+            </div>
+            <div class="stay-info">
+                🏨 住宿：中部國際機場周邊 (東橫INN / Comfort Hotel)
+            </div>
+        </div>
+    </div>
+
+    <div class="day-card drive-mode">
+        <div class="day-header">
+            <span class="day-title">Day 1 - 6/12 (五)</span>
+            <span class="day-location">📍 名古屋 ➜ 鈴鹿</span>
+        </div>
+        <div class="timeline">
+            <div class="event">
+                <div class="time">09:00 - 10:00</div>
+                <div class="content">
+                    <div class="activity">🚗 機場租車</div>
+                    <div class="details"><span class="highlight">檢查 ETC 卡、兒童座椅。</span> 設定導航前往樂高樂園。</div>
+                </div>
+            </div>
+            <div class="event">
+                <div class="time">10:30 - 16:30</div>
+                <div class="content">
+                    <div class="activity">🎢 名古屋樂高樂園 (Legoland)</div>
+                    <div class="details">導航：金城埠頭停車場。盡情玩樂至閉園。</div>
+                </div>
+            </div>
+            <div class="event">
+                <div class="time">16:30 - 17:30</div>
+                <div class="content">
+                    <div class="activity">🛣️ 移動至鈴鹿市</div>
+                    <div class="details">車程約 50 分鐘。走伊勢灣岸道。</div>
+                </div>
+            </div>
+            <div class="stay-info">
+                🏨 住宿：鈴鹿市區飯店 (如 Route Inn Suzuka)
+            </div>
+        </div>
+    </div>
+
+    <div class="day-card drive-mode">
+        <div class="day-header">
+            <span class="day-title">Day 2 - 6/13 (六)</span>
+            <span class="day-location">📍 鈴鹿 ➜ 滋賀長濱</span>
+        </div>
+        <div class="timeline">
+            <div class="event">
+                <div class="time">09:30 - 16:00</div>
+                <div class="content">
+                    <div class="activity">🏎️ 鈴鹿賽道樂園 (Motopia)</div>
+                    <div class="details">6歲考賽車駕照，2歲玩蝸牛花園。</div>
+                </div>
+            </div>
+            <div class="event">
+                <div class="time">16:00 - 17:30</div>
+                <div class="content">
+                    <div class="activity">🚗 移動至滋賀縣長濱市</div>
+                    <div class="details">車程約 1.5 小時。避開岐阜市區，方便明天往北。</div>
+                </div>
+            </div>
+            <div class="event">
+                <div class="time">18:00</div>
+                <div class="content">
+                    <div class="activity">🍽️ 晚餐：國道8號線</div>
+                    <div class="details">推薦壽司郎或 Coco's 家庭餐廳，親子友善。</div>
+                </div>
+            </div>
+            <div class="stay-info">
+                🏨 住宿：長濱或米原周邊 (如 Route Inn Nagahama)
+            </div>
+        </div>
+    </div>
+
+    <div class="day-card drive-mode">
+        <div class="day-header">
+            <span class="day-title">Day 3 - 6/14 (日)</span>
+            <span class="day-location">📍 恐龍博物館 ➜ 立山</span>
+        </div>
+        <div class="timeline">
+            <div class="event">
+                <div class="time">09:30 - 10:45</div>
+                <div class="content">
+                    <div class="activity">🚗 移動至福井縣</div>
+                    <div class="details">車程約 1 小時 15 分 (北陸自動車道)。</div>
+                </div>
+            </div>
+            <div class="event">
+                <div class="time">11:00 - 16:00</div>
+                <div class="content">
+                    <div class="activity">🦖 福井縣立恐龍博物館</div>
+                    <div class="details"><span class="highlight">⚠️ 需事先預約時段。</span> 務必在 16:00 前離開。</div>
+                </div>
+            </div>
+            <div class="event">
+                <div class="time">16:00 - 18:00</div>
+                <div class="content">
+                    <div class="activity">🚗 趕路至立山山麓</div>
+                    <div class="details">車程約 2 小時。這是最趕的一段路，為了趕上晚餐。</div>
+                </div>
+            </div>
+            <div class="stay-info">
+                🏨 住宿：立山山麓溫泉 (森之風立山 / Green Park 吉峰)
+            </div>
+        </div>
+    </div>
+
+    <div class="day-card drive-mode">
+        <div class="day-header">
+            <span class="day-title">Day 4 - 6/15 (一)</span>
+            <span class="day-location">📍 立山黑部 (雪之大谷)</span>
+        </div>
+        <div class="timeline">
+            <div class="event">
+                <div class="time">09:00 - 14:00</div>
+                <div class="content">
+                    <div class="activity">🏔️ 立山黑部阿爾卑斯路線</div>
+                    <div class="details"><span class="highlight">⚠️ 需Web預約車票。</span> 車停立山站 ➜ 室堂(雪牆) ➜ 大觀峰 ➜ 原路折返。</div>
+                </div>
+            </div>
+            <div class="event">
+                <div class="time">14:00 - 15:30</div>
+                <div class="content">
+                    <div class="activity">🚗 下山移動至富山</div>
+                    <div class="details">下山取車，開往富山市區住宿，方便明天上高速。</div>
+                </div>
+            </div>
+            <div class="stay-info">
+                🏨 住宿：富山市區飯店 (如 Daiwa Roynet Toyama)
+            </div>
+        </div>
+    </div>
+
+    <div class="day-card drive-mode">
+        <div class="day-header">
+            <span class="day-title">Day 5 - 6/16 (二)</span>
+            <span class="day-location">📍 合掌村 ➜ 名古屋還車</span>
+        </div>
+        <div class="timeline">
+            <div class="event">
+                <div class="time">09:30 - 11:00</div>
+                <div class="content">
+                    <div class="activity">🚗 移動至合掌村</div>
+                    <div class="details">車程約 1 小時 15 分。</div>
+                </div>
+            </div>
+            <div class="event">
+                <div class="time">11:00 - 14:00</div>
+                <div class="content">
+                    <div class="activity">🏠 白川鄉合掌村</div>
+                    <div class="details">參觀合掌造，必去展望台拍照，享用飛驒牛午餐。</div>
+                </div>
+            </div>
+            <div class="event">
+                <div class="time">14:00 - 16:30</div>
+                <div class="content">
+                    <div class="activity">🚗 返回名古屋 (還車)</div>
+                    <div class="details">車程約 2.5 小時。先放家人行李到飯店，再去還車。</div>
+                </div>
+            </div>
+            <div class="stay-info">
+                🏨 住宿：名古屋市區 (建議連住4晚，榮或名古屋站)
+            </div>
+        </div>
+    </div>
+
+    <div class="day-card train-mode">
+        <div class="day-header">
+            <span class="day-title">Day 6 - 6/17 (三)</span>
+            <span class="day-location">📍 犬山城 & 榮商圈採買</span>
+        </div>
+        <div class="timeline">
+            <div class="event">
+                <div class="time">10:00 - 13:30</div>
+                <div class="content">
+                    <div class="activity">🏯 犬山城 + 城下町</div>
+                    <div class="details">搭乘名鐵特急。參觀古城，城下町邊走邊吃。</div>
+                </div>
+            </div>
+            <div class="event">
+                <div class="time">14:30 - 18:30</div>
+                <div class="content">
+                    <div class="activity">🛍️ 榮 (Sakae) 商圈大採購</div>
+                    <div class="details">
+                        1. <b>松坂屋：</b>寶可夢中心(5F)、迪士尼商店(8F)<br>
+                        2. <b>綠洲21：</b>橡子共和國(吉卜力)<br>
+                        3. <b>唐吉訶德：</b>藥妝零食補貨
+                    </div>
+                </div>
+            </div>
+            <div class="stay-info">
+                🏨 住宿：名古屋市區
+            </div>
+        </div>
+    </div>
+
+    <div class="day-card train-mode">
+        <div class="day-header">
+            <span class="day-title">Day 7 - 6/18 (四)</span>
+            <span class="day-location">📍 東山動植物園</span>
+        </div>
+        <div class="timeline">
+            <div class="event">
+                <div class="time">10:00 - 16:00</div>
+                <div class="content">
+                    <div class="activity">🦍 東山動植物園</div>
+                    <div class="details">搭乘地鐵東山線。必看帥哥大猩猩、無尾熊，兒童動物園摸天竺鼠。</div>
+                </div>
+            </div>
+            <div class="stay-info">
+                🏨 住宿：名古屋市區
+            </div>
+        </div>
+    </div>
+
+    <div class="day-card train-mode">
+        <div class="day-header">
+            <span class="day-title">Day 8 - 6/19 (五)</span>
+            <span class="day-location">📍 名古屋港水族館</span>
+        </div>
+        <div class="timeline">
+            <div class="event">
+                <div class="time">10:00 - 15:30</div>
+                <div class="content">
+                    <div class="activity">🐬 名古屋港水族館 + 南極觀測船</div>
+                    <div class="details">搭乘地鐵名港線。看虎鯨表演、南極企鵝，參觀橘色破冰船。</div>
+                </div>
+            </div>
+            <div class="stay-info">
+                🏨 住宿：名古屋市區 (最後整理行李)
+            </div>
+        </div>
+    </div>
+
+    <div class="day-card train-mode">
+        <div class="day-header">
+            <span class="day-title">Day 9 - 6/20 (六)</span>
+            <span class="day-location">📍 返台</span>
+        </div>
+        <div class="timeline">
+            <div class="event">
+                <div class="time">07:30</div>
+                <div class="content">
+                    <div class="activity">🚆 前往中部國際機場</div>
+                    <div class="details">搭乘名鐵 μ-SKY 特急 (約28分)。</div>
+                </div>
+            </div>
+            <div class="event">
+                <div class="time">09:00</div>
+                <div class="content">
+                    <div class="activity">✈️ 班機起飛</div>
+                    <div class="details">逛機場蝦餅店，平安回家。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
