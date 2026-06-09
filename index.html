@@ -3,159 +3,225 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>名古屋・北陸・鈴鹿 10天9夜 親子自駕行</title>
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --accent-color: #e74c3c;
-            --drive-color: #3498db;
-            --train-color: #27ae60;
-            --bg-color: #f5f7fa;
-            --card-bg: #ffffff;
+    <title>名古屋・北陸・鈴鹿 親子自駕與鐵道微旅行 10天9夜全攻略</title>
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=Mc-4mUO8qr6NAcNFY46ogapKv_-YVyc9-r4IiTh6Ipaaiy9BoTxCMH4rxgli7h-BUJO-FwmDLC3PxQyIhgUsuPz-G43O4zr07ggWG7T2ijROCPtVoKhY-XJOcqz_0dYrrQsIdfwp3ZW_X0GkOoUA_hw_wxxxxjjdamvWxPHcY8hOwCHVKIS_wDu2oaeF16EWRh2Ud1yg5EfE3EATeYABLZBrvV--q8B3T3Y5NwSqMglHY7wKvOMGlQ4ZxO3Z5EWXdahtDG6SpKv7Ubtks_-Ir3xgUnGSCULvHcmXoouXNzNuSrfN15KD5-JnmzlnhORX6c6Ver3HDJ_h6jYQQfP2GgbHBsaNG0_MYK9LdrMgOrs" charset="UTF-8"></script><style>
+        *, *::before, *::after {
+            box-sizing: border-box;
         }
-
         body {
-            font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft JhengHei", sans-serif;
-            background-color: var(--bg-color);
-            color: #333;
-            line-height: 1.6;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Microsoft JhengHei", sans-serif;
+            background-color: #f7f9fb;
+            color: #2c3e50;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            line-height: 1.7;
         }
-
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
+            padding: 30px 20px;
         }
-
+        
+        /* Header section */
         header {
+            background: linear-gradient(135deg, #1a365d 0%, #2a4365 100%);
+            color: #ffffff;
+            padding: 40px 30px;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(26, 54, 93, 0.15);
             text-align: center;
-            margin-bottom: 40px;
-            padding: 20px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
-
-        h1 {
-            color: var(--primary-color);
+        header h1 {
             margin: 0;
-            font-size: 2em;
+            font-size: 24pt;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        header p {
+            margin: 10px 0 0 0;
+            font-size: 12pt;
+            color: #e2e8f0;
+        }
+        .meta-info {
+            margin-top: 20px;
+            font-size: 10.5pt;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 12px;
+            border-radius: 8px;
+            display: inline-block;
         }
 
-        .subtitle {
-            color: #7f8c8d;
-            font-size: 1.1em;
-            margin-top: 10px;
+        /* Summary Cards */
+        .grid-section {
+            display: block;
+            margin-bottom: 40px;
         }
-
-        .summary-tags {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .tag {
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            font-weight: bold;
-            color: white;
-        }
-
-        .tag.drive { background-color: var(--drive-color); }
-        .tag.train { background-color: var(--train-color); }
-
-        /* Day Card Styling */
-        .day-card {
-            background: var(--card-bg);
+        .card {
+            background: #ffffff;
             border-radius: 12px;
-            margin-bottom: 25px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            overflow: hidden;
-            border-left: 6px solid var(--primary-color);
-            page-break-inside: avoid; /* 防止列印時切斷卡片 */
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            border: 1px solid #e2e8f0;
         }
-
-        .day-card.drive-mode { border-left-color: var(--drive-color); }
-        .day-card.train-mode { border-left-color: var(--train-color); }
-
-        .day-header {
-            padding: 15px 20px;
-            background: #f8f9fa;
-            border-bottom: 1px solid #eee;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .day-title {
-            font-size: 1.3em;
+        .card-title {
+            font-size: 14pt;
             font-weight: bold;
-            color: var(--primary-color);
-        }
-
-        .day-location {
-            font-size: 0.9em;
-            color: #7f8c8d;
-        }
-
-        .timeline {
-            padding: 20px;
-        }
-
-        .event {
-            display: flex;
+            color: #1a365d;
+            margin-top: 0;
             margin-bottom: 15px;
-            align-items: flex-start;
+            border-left: 5px solid #3182ce;
+            padding-left: 10px;
         }
-
-        .event:last-child { margin-bottom: 0; }
-
-        .time {
-            min-width: 100px;
+        
+        /* Alert Box */
+        .alert-box {
+            background-color: #fff5f5;
+            border-left: 5px solid #e53e3e;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            color: #c53030;
+        }
+        .alert-box h4 {
+            margin: 0 0 8px 0;
+            font-size: 12pt;
             font-weight: bold;
-            color: #7f8c8d;
-            font-size: 0.95em;
+        }
+        .alert-box ul {
+            margin: 0;
+            padding-left: 20px;
+            font-size: 10.5pt;
         }
 
-        .content {
-            flex: 1;
+        /* Master Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 35px;
+            background: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
         }
-
-        .activity {
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            font-size: 10pt;
+        }
+        th {
+            background-color: #2d3748;
+            color: #ffffff;
+            font-weight: 600;
+        }
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+        tr {
+            border-bottom: 1px solid #edf2f7;
+        }
+        
+        /* Badges */
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 9pt;
             font-weight: bold;
-            font-size: 1.1em;
+            text-align: center;
+            color: #ffffff;
+        }
+        .badge-drive { background-color: #3182ce; }
+        .badge-train { background-color: #38a169; }
+        .badge-stay { background-color: #805ad5; }
+        .badge-alert { background-color: #e53e3e; }
+
+        /* Timeline Section */
+        .day-section {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            border: 1px solid #e2e8f0;
+        }
+        .day-header {
+            display: table;
+            width: 100%;
+            border-bottom: 2px solid #edf2f7;
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+        }
+        .day-title {
+            display: table-cell;
+            font-size: 16pt;
+            font-weight: bold;
+            color: #1a365d;
+        }
+        .day-mode {
+            display: table-cell;
+            text-align: right;
+            vertical-align: middle;
+        }
+        
+        .time-block {
+            margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 3px solid #cbd5e0;
+        }
+        .time-block.important {
+            border-left-color: #e53e3e;
+            background-color: #fffaf0;
+            padding: 12px 15px;
+            border-radius: 0 8px 8px 0;
+        }
+        .time-label {
+            font-weight: bold;
+            color: #4a5568;
+            font-size: 10.5pt;
             margin-bottom: 4px;
         }
-
-        .details {
-            font-size: 0.95em;
-            color: #555;
+        .activity-name {
+            font-size: 12pt;
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 6px;
+        }
+        .activity-desc {
+            font-size: 10.5pt;
+            color: #4a5568;
         }
 
-        .highlight {
-            color: var(--accent-color);
+        .hotel-box {
+            background-color: #f7fafc;
+            border: 1px solid #e2e8f0;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-size: 10.5pt;
+        }
+        .hotel-name {
+            font-weight: bold;
+            color: #805ad5;
+        }
+
+        /* Custom Math/Info Styling */
+        .info-highlight {
+            background-color: #ebf8ff;
+            color: #2b6cb0;
+            padding: 2px 6px;
+            border-radius: 4px;
             font-weight: bold;
         }
-
-        .icon { margin-right: 5px; }
-
-        .stay-info {
-            margin-top: 10px;
-            padding-top: 10px;
-            border-top: 1px dashed #eee;
-            font-size: 0.9em;
-            color: #666;
-        }
-
-        /* Print Optimization */
-        @media print {
-            body { background-color: white; padding: 0; }
-            .container { max-width: 100%; }
-            .day-card { box-shadow: none; border: 1px solid #eee; margin-bottom: 15px; }
-            header { box-shadow: none; margin-bottom: 20px; }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #718096;
+            font-size: 9.5pt;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 20px;
         }
     </style>
 </head>
@@ -163,282 +229,410 @@
 
 <div class="container">
     <header>
-        <h1>🎌 名古屋・北陸・鈴鹿 親子自駕 10天9夜</h1>
-        <div class="subtitle">成員：2大2小 (6歲 & 2歲) | 日期：6/11 - 6/20</div>
-        <div class="summary-tags">
-            <span class="tag drive">🚗 Day 1-5 自駕</span>
-            <span class="tag train">🚃 Day 6-9 電車/地鐵</span>
+        <h1>🎌 名古屋・北陸・鈴鹿 親子全攻略 10天9夜行程表</h1>
+        <p>優化版：逆時針大環線自駕 + 城市鐵道微旅行</p>
+        <div class="meta-info">
+            👨‍👩‍👧‍👦 <b>成員組成：</b>2位大人、1位6歲男孩、1位2歲女孩 &nbsp;|&nbsp; 🗓️ <b>旅遊日期：</b>6/11 - 6/20
         </div>
     </header>
 
-    <div class="day-card train-mode">
+    <!-- 核心提醒區塊 -->
+    <div class="alert-box">
+        <h4>🚨 行前核心變更與關鍵提醒事項</h4>
+        <ul>
+            <li><b>CEP (中部高速公路Pass) 已正式停售：</b>自 2024 年 10 月起已停止販售，本行程全面改用 <b>ETC 卡實報實銷</b>。已妥善利用週六日「假日折扣 7 折」機制優化過路費。</li>
+            <li><b>前半段自駕 (D1-D5)：</b>中部國際機場取車 ➜ 名古屋市區還車。免除帶著 2 歲與 6 歲幼童在北陸地區頻繁搬運行李與轉車的痛苦。</li>
+            <li><b>後半段大眾運輸 (D5-D9)：</b>Day 5 傍晚於名古屋還車，省下後續租車費與名古屋市區昂貴的停車費（一晚約 ¥1,500 - ¥2,000）。</li>
+            <li><b>育兒裝備建議：</b>東山動植物園與黑部立山地形有坡度，請務必攜帶輕便推車或背巾，以應付 2 歲幼童下午的午睡大魔王。</li>
+        </ul>
+    </div>
+
+    <!-- 預算與財務摘要 -->
+    <div class="card">
+        <div class="card-title">💰 交通預算與門票預約時程摘要</div>
+        <p><b>高速公路過路費 (ETC 實報實銷預估)：</b> 總計約 <span class="info-highlight">¥18,900 ～ ¥20,000 日圓</span>。</p>
+        <ul>
+            <li>週五 (D1) 與週一、二 (D4, D5) 按原價計費。</li>
+            <li>週六 (D2) 鈴鹿 ➜ 長濱、週日 (D3) 長濱 ➜ 福井 ➜ 立山，全面享有 <b>ETC 假日折扣 (30% OFF)</b>。</li>
+        </ul>
+        <p><b>📅 關鍵搶票行事曆：</b></p>
+        <ul>
+            <li><b>4 月 15 日：</b> 開放預約 <b>福井縣立恐龍博物館</b> 常設展門票 (採指定日期與時段制，建議預約 11:00 入場)。</li>
+            <li><b>5 月 01 日：</b> 開放預約 <b>立山黑部 Web 車票</b> (夏季票開賣，建議預約 08:00 - 08:30 立山車站發車班次)。</li>
+        </ul>
+    </div>
+
+    <!-- 總覽表格 -->
+    <div class="card">
+        <div class="card-title">📅 10天9夜 完整行程骨架總覽</div>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 8%;">天數</th>
+                    <th style="width: 12%;">日期</th>
+                    <th style="width: 15%;">主要行程</th>
+                    <th style="width: 25%;">交通工具與路徑</th>
+                    <th style="width: 15%;">交通型態</th>
+                    <th style="width: 25%;">住宿飯店名稱</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b>Day 0</b></td>
+                    <td>6/11 (四)</td>
+                    <td>抵達名古屋</td>
+                    <td>航抵入境 ➜ 步行至機場飯店</td>
+                    <td><span class="badge badge-train">徒步</span></td>
+                    <td>中部國際機場東橫INN / Comfort Hotel</td>
+                </tr>
+                <tr>
+                    <td><b>Day 1</b></td>
+                    <td>6/12 (五)</td>
+                    <td>樂高樂園</td>
+                    <td>機場取車 ➜ 樂高樂園 ➜ 鈴鹿</td>
+                    <td><span class="badge badge-drive">自駕 (約1h 15m)</span></td>
+                    <td class="hotel-name">ホテルキャッスルイン鈴鹿</td>
+                </tr>
+                <tr>
+                    <td><b>Day 2</b></td>
+                    <td>6/13 (六)</td>
+                    <td>鈴鹿賽道樂園</td>
+                    <td>鈴鹿賽道整日 ➜ 開車前往滋賀長濱</td>
+                    <td><span class="badge badge-drive">自駕 (約1h 30m)</span></td>
+                    <td class="hotel-name">グランドメルキュール琵琶湖リゾート</td>
+                </tr>
+                <tr>
+                    <td><b>Day 3</b></td>
+                    <td>6/14 (日)</td>
+                    <td>福井恐龍博物館</td>
+                    <td>長濱 ➜ 恐龍博物館 ➜ 立山山麓</td>
+                    <td><span class="badge badge-drive">自駕 (約3h 15m)</span></td>
+                    <td class="hotel-name">立山国際ホテル</td>
+                </tr>
+                <tr>
+                    <td><b>Day 4</b></td>
+                    <td>6/15 (一)</td>
+                    <td>立山黑部雪牆</td>
+                    <td>車停立山站 ➜ 登山纜車/巴士 ➜ 富山</td>
+                    <td><span class="badge badge-drive">自駕+登山工具</span></td>
+                    <td class="hotel-name">Hotel LiveMax Toyama</td>
+                </tr>
+                <tr>
+                    <td><b>Day 5</b></td>
+                    <td>6/16 (二)</td>
+                    <td>合掌村 ➜ 還車</td>
+                    <td>富山 ➜ 合掌村 ➜ 名古屋市區還車</td>
+                    <td><span class="badge badge-drive">自駕 (約3h 45m)</span></td>
+                    <td>名古屋市區飯店 (榮 / 名古屋站)</td>
+                </tr>
+                <tr>
+                    <td><b>Day 6</b></td>
+                    <td>6/17 (三)</td>
+                    <td>犬山城+榮商圈</td>
+                    <td>名鐵特急往返犬山 ➜ 榮商圈採買</td>
+                    <td><span class="badge badge-train">名鐵電車+地鐵</span></td>
+                    <td>名古屋市區飯店 (連住)</td>
+                </tr>
+                <tr>
+                    <td><b>Day 7</b></td>
+                    <td>6/18 (四)</td>
+                    <td>東山動植物園</td>
+                    <td>名古屋市區 ↔ 地鐵東山公園站</td>
+                    <td><span class="badge badge-train">名古屋地鐵</span></td>
+                    <td>名古屋市區飯店 (連住)</td>
+                </tr>
+                <tr>
+                    <td><b>Day 8</b></td>
+                    <td>6/19 (五)</td>
+                    <td>名古屋港水族館</td>
+                    <td>名古屋市區 ↔ 地鐵名古屋港站</td>
+                    <td><span class="badge badge-train">名古屋地鐵</span></td>
+                    <td>名古屋市區飯店 (連住)</td>
+                </tr>
+                <tr>
+                    <td><b>Day 9</b></td>
+                    <td>6/20 (六)</td>
+                    <td>早班機返台</td>
+                    <td>名鐵特急 μ-SKY ➜ 機場 ➜ 台灣</td>
+                    <td><span class="badge badge-train">名鐵 μ-SKY</span></td>
+                    <td>-- 溫暖的家 --</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 詳細每日行程說明 -->
+    <h2>📋 每日詳細執行攻略與交通節點</h2>
+
+    <!-- Day 0 -->
+    <div class="day-section">
         <div class="day-header">
-            <span class="day-title">Day 0 - 6/11 (四)</span>
-            <span class="day-location">📍 抵達名古屋</span>
+            <div class="day-title">Day 0 | 6/11 (四) 抵達日本安頓</div>
+            <div class="day-mode"><span class="badge badge-stay">住宿日</span></div>
         </div>
-        <div class="timeline">
-            <div class="event">
-                <div class="time">22:00</div>
-                <div class="content">
-                    <div class="activity">✈️ 抵達中部國際機場 (NGO)</div>
-                    <div class="details">出關後直接步行至機場飯店，養精蓄銳。</div>
-                </div>
-            </div>
-            <div class="stay-info">
-                🏨 住宿：中部國際機場周邊 (東橫INN / Comfort Hotel)
-            </div>
+        <div class="time-block">
+            <div class="time-label">22:00</div>
+            <div class="activity-name">✈️ 抵達中部國際機場 (NGO)</div>
+            <div class="activity-desc">深夜航班抵達，帶兩個幼童不適合折騰進市區。通關後直接步行前往機場直結的飯店辦理入住，讓孩子們立刻休息補充體力。</div>
+        </div>
+        <div class="hotel-box">
+            🏠 <b>今日住宿：</b><span class="hotel-name">中部國際機場東橫INN</span> 或 <span class="hotel-name">Comfort Hotel 中部國際機場</span>
         </div>
     </div>
 
-    <div class="day-card drive-mode">
+    <!-- Day 1 -->
+    <div class="day-section">
         <div class="day-header">
-            <span class="day-title">Day 1 - 6/12 (五)</span>
-            <span class="day-location">📍 名古屋 ➜ 鈴鹿</span>
+            <div class="day-title">Day 1 | 6/12 (五) 樂高積木夢幻世界</div>
+            <div class="day-mode"><span class="badge badge-drive">自駕模式</span></div>
         </div>
-        <div class="timeline">
-            <div class="event">
-                <div class="time">09:00 - 10:00</div>
-                <div class="content">
-                    <div class="activity">🚗 機場租車</div>
-                    <div class="details"><span class="highlight">檢查 ETC 卡、兒童座椅。</span> 設定導航前往樂高樂園。</div>
-                </div>
+        <div class="time-block">
+            <div class="time-label">09:00 - 10:00</div>
+            <div class="activity-name">🚗 機場租車取車</div>
+            <div class="activity-desc">於機場租車櫃檯辦理手續。<b>務必現場確認：</b>ETC卡已裝妥、1張6歲兒童增高墊、1張2歲幼兒安全座椅安裝穩固。</div>
+        </div>
+        <div class="time-block">
+            <div class="time-label">10:30 - 16:30</div>
+            <div class="activity-name">🎢 名古屋樂高樂園 (Legoland Japan)</div>
+            <div class="activity-desc">
+                <b>交通引導：</b>開車約 25 分鐘。車輛請直接導航停放於<b>「金城ふ頭駐車場」</b>(金城埠頭大型停車場)。<br>
+                <b>育兒備註：</b>設施非常適合 2-6 歲幼童，園區腹地大小適中，適合做為自駕第一站。
             </div>
-            <div class="event">
-                <div class="time">10:30 - 16:30</div>
-                <div class="content">
-                    <div class="activity">🎢 名古屋樂高樂園 (Legoland)</div>
-                    <div class="details">導航：金城埠頭停車場。盡情玩樂至閉園。</div>
-                </div>
+        </div>
+        <div class="time-block">
+            <div class="time-label">16:30 - 17:30</div>
+            <div class="activity-name">🛣️ 移動至三重縣鈴鹿市</div>
+            <div class="activity-desc">
+                <b>交通引導：</b>行駛「伊勢灣岸自動車道」，經由名港中央IC至三重川越IC，接續一般道路前往鈴鹿市區，車程約 50 分鐘。過路費實報實銷 (約 ¥3,700)。<br>
+                <b>好處：</b>今晚直接入住鈴鹿，明早免去排隊進賽道的塞車潮。
             </div>
-            <div class="event">
-                <div class="time">16:30 - 17:30</div>
-                <div class="content">
-                    <div class="activity">🛣️ 移動至鈴鹿市</div>
-                    <div class="details">車程約 50 分鐘。走伊勢灣岸道。</div>
-                </div>
-            </div>
-            <div class="stay-info">
-                🏨 住宿：鈴鹿市區飯店 (如 Route Inn Suzuka)
-            </div>
+        </div>
+        <div class="hotel-box">
+            🏠 <b>今日住宿：</b><span class="hotel-name">ホテルキャッスルイン鈴鹿 (Hotel Castle Inn Suzuka)</span>
         </div>
     </div>
 
-    <div class="day-card drive-mode">
+    <!-- Day 2 -->
+    <div class="day-section">
         <div class="day-header">
-            <span class="day-title">Day 2 - 6/13 (六)</span>
-            <span class="day-location">📍 鈴鹿 ➜ 滋賀長濱</span>
+            <div class="day-title">Day 2 | 6/13 (六) 鈴鹿賽道賽車初體驗</div>
+            <div class="day-mode"><span class="badge badge-drive">自駕模式 (適用假日折扣)</span></div>
         </div>
-        <div class="timeline">
-            <div class="event">
-                <div class="time">09:30 - 16:00</div>
-                <div class="content">
-                    <div class="activity">🏎️ 鈴鹿賽道樂園 (Motopia)</div>
-                    <div class="details">6歲考賽車駕照，2歲玩蝸牛花園。</div>
-                </div>
+        <div class="time-block">
+            <div class="time-label">09:30 - 16:00</div>
+            <div class="activity-name">🏎️ 鈴鹿賽道樂園 (Motopia)</div>
+            <div class="activity-desc">讓孩子們親自駕駛各種交通工具。6歲大寶可以體驗獨立操作考取駕駛執照，2歲妹妹可在爸媽陪同下搭乘蝸牛花園等低刺激設施。</div>
+        </div>
+        <div class="time-block">
+            <div class="time-label">16:00 - 17:30</div>
+            <div class="activity-name">🚗 北上移動至滋賀縣長濱市 (琵琶湖畔)</div>
+            <div class="activity-desc">
+                <b>交通引導：</b>行駛東名阪道 ➜ 新名神 ➜ 名神高速，車程約 1.5 小時。<br>
+                <b>💡 避坑指引：</b>此路線故意捨棄原定的「岐阜市」，改住滋賀「長濱/米原」地區。這讓明早前往福井恐龍博物館的路程大幅縮短 40 分鐘，且完美享有 <b>ETC 假日折扣 (折後約 ¥2,200)</b>。
             </div>
-            <div class="event">
-                <div class="time">16:00 - 17:30</div>
-                <div class="content">
-                    <div class="activity">🚗 移動至滋賀縣長濱市</div>
-                    <div class="details">車程約 1.5 小時。避開岐阜市區，方便明天往北。</div>
-                </div>
-            </div>
-            <div class="event">
-                <div class="time">18:00</div>
-                <div class="content">
-                    <div class="activity">🍽️ 晚餐：國道8號線</div>
-                    <div class="details">推薦壽司郎或 Coco's 家庭餐廳，親子友善。</div>
-                </div>
-            </div>
-            <div class="stay-info">
-                🏨 住宿：長濱或米原周邊 (如 Route Inn Nagahama)
-            </div>
+        </div>
+        <div class="time-block important">
+            <div class="time-label">18:00</div>
+            <div class="activity-name">🍽️ 晚餐特選：長濱國道8號線美食街</div>
+            <div class="activity-desc">長濱老街黑壁廣場周邊店家 17:00 陸續打烊。強烈建議開車前往<b>「國道8號（長濱外環道）」</b>，這裡聚集超大停車場的<b>壽司郎、Coco's 家庭餐廳</b>，營業到深夜且備有豐富兒童餐，是自駕育兒救星。</div>
+        </div>
+        <div class="hotel-box">
+            🏠 <b>今日住宿：</b><span class="hotel-name">グランドメルキュール琵琶湖リゾート＆スパ (Grand Mercure Biwako Resort & Spa)</span>
         </div>
     </div>
 
-    <div class="day-card drive-mode">
+    <!-- Day 3 -->
+    <div class="day-section">
         <div class="day-header">
-            <span class="day-title">Day 3 - 6/14 (日)</span>
-            <span class="day-location">📍 恐龍博物館 ➜ 立山</span>
+            <div class="day-title">Day 3 | 6/14 (日) 勇闖恐龍大本營 & 北陸長征</div>
+            <div class="day-mode"><span class="badge badge-drive">自駕模式 (適用假日折扣)</span></div>
         </div>
-        <div class="timeline">
-            <div class="event">
-                <div class="time">09:30 - 10:45</div>
-                <div class="content">
-                    <div class="activity">🚗 移動至福井縣</div>
-                    <div class="details">車程約 1 小時 15 分 (北陸自動車道)。</div>
-                </div>
+        <div class="time-block">
+            <div class="time-label">09:30 - 10:45</div>
+            <div class="activity-name">🚗 長濱 ➜ 福井縣勝山市</div>
+            <div class="activity-desc">行駛北陸自動車道（長濱IC ➜ 福井北IC），車程約 1 小時 15 分鐘。假日折扣後過路費約 ¥2,100。</div>
+        </div>
+        <div class="time-block important">
+            <div class="time-label">11:00 - 16:00</div>
+            <div class="activity-name">🦖 福井縣立恐龍博物館 (【4/15 務必線上預約】)</div>
+            <div class="activity-desc">
+                世界三大恐龍博物館之一！參觀常設展的上百具骨架與逼真動態恐龍。<br>
+                <b>⚠️ 育兒撤退指令：為了兼顧立山溫泉旅館的晚餐，當天下午「16:00 準時發動汽車離開」為鐵律！</b> 建議不要預約耗時較長的野外化石挖掘巴士，大寶若想體驗挖掘，可在本館旁的勝山恐龍公園現場報名小型發掘即可。
             </div>
-            <div class="event">
-                <div class="time">11:00 - 16:00</div>
-                <div class="content">
-                    <div class="activity">🦖 福井縣立恐龍博物館</div>
-                    <div class="details"><span class="highlight">⚠️ 需事先預約時段。</span> 務必在 16:00 前離開。</div>
-                </div>
-            </div>
-            <div class="event">
-                <div class="time">16:00 - 18:00</div>
-                <div class="content">
-                    <div class="activity">🚗 趕路至立山山麓</div>
-                    <div class="details">車程約 2 小時。這是最趕的一段路，為了趕上晚餐。</div>
-                </div>
-            </div>
-            <div class="stay-info">
-                🏨 住宿：立山山麓溫泉 (森之風立山 / Green Park 吉峰)
-            </div>
+        </div>
+        <div class="time-block">
+            <div class="time-label">16:00 - 18:00</div>
+            <div class="activity-name">🚗 跨縣長征：福井 ➜ 富山立山山麓</div>
+            <div class="activity-desc">行駛北陸自動車道（福井北IC ➜ 立山IC），車程約 2 小時。這段是整趟行程開車最累的考驗，剛好讓兩個小孩在後座睡午覺。假日折扣後過路費約 ¥2,900。</div>
+        </div>
+        <div class="hotel-box">
+            🏠 <b>今日住宿：</b><span class="hotel-name">立山国際ホテル (Tateyama Kokusai Hotel)</span> （預計 18:00 前抵達辦理入住並享用一泊二食溫泉大餐）
         </div>
     </div>
 
-    <div class="day-card drive-mode">
+    <!-- Day 4 -->
+    <div class="day-section">
         <div class="day-header">
-            <span class="day-title">Day 4 - 6/15 (一)</span>
-            <span class="day-location">📍 立山黑部 (雪之大谷)</span>
+            <div class="day-title">Day 4 | 6/15 (一) 立山黑部大雪壁震撼體驗</div>
+            <div class="day-mode"><span class="badge badge-drive">自駕至車站 + 登山工具</span></div>
         </div>
-        <div class="timeline">
-            <div class="event">
-                <div class="time">09:00 - 14:00</div>
-                <div class="content">
-                    <div class="activity">🏔️ 立山黑部阿爾卑斯路線</div>
-                    <div class="details"><span class="highlight">⚠️ 需Web預約車票。</span> 車停立山站 ➜ 室堂(雪牆) ➜ 大觀峰 ➜ 原路折返。</div>
-                </div>
+        <div class="time-block">
+            <div class="time-label">08:30 - 09:00</div>
+            <div class="activity-name">🚗 前往立山車站基地</div>
+            <div class="activity-desc">從飯店退房後，開車 15 分鐘至「立山車站」，將私家車免費停放在車站前的大型露天停車場。</div>
+        </div>
+        <div class="time-block important">
+            <div class="time-label">09:00 - 14:30</div>
+            <div class="activity-name">🏔️ 立山黑部阿爾卑斯路線折返遊 (【5/1 搶Web車票】)</div>
+            <div class="activity-desc">
+                <b>建議精華路線：</b>立山車站 ➜ (登山纜車) ➜ 美女平 ➜ (高原巴士) ➜ <b>室堂（主要看大雪壁、在此午餐）</b> ➜ (隧道無軌電車) ➜ 大觀峰 ➜ <b>黑部平（搭乘日本無支柱奇蹟空中纜車，拍完照折返）</b> ➜ 原路返回立山車站。<br>
+                <b>👶 育兒彈性策略：</b>6月中旬平日人潮少不需漫長排隊，可以推進至黑部平。但每換一種工具就要收折一次嬰兒車（來回共 6 次），下午 13:00 過後若二寶開始瞌睡鬧彆扭，在<b>大觀峰觀景台</b>即可見好就收、原路下山，避免大人體力崩潰。
             </div>
-            <div class="event">
-                <div class="time">14:00 - 15:30</div>
-                <div class="content">
-                    <div class="activity">🚗 下山移動至富山</div>
-                    <div class="details">下山取車，開往富山市區住宿，方便明天上高速。</div>
-                </div>
-            </div>
-            <div class="stay-info">
-                🏨 住宿：富山市區飯店 (如 Daiwa Roynet Toyama)
-            </div>
+        </div>
+        <div class="time-block">
+            <div class="time-label">14:30 - 15:30</div>
+            <div class="activity-name">🚗 移動至富山市區</div>
+            <div class="activity-desc">下山回立山車站取車，開車約 50 分鐘前往富山市區。今天入住市區商務旅館，不綁定晚餐時間，行程極其鬆弛。</div>
+        </div>
+        <div class="hotel-box">
+            🏠 <b>今日住宿：</b><span class="hotel-name">Hotel LiveMax Toyama (ホテルリブマックス富山)</span> (附近生活機能發達，便於隨意覓食)
         </div>
     </div>
 
-    <div class="day-card drive-mode">
+    <!-- Day 5 -->
+    <div class="day-section">
         <div class="day-header">
-            <span class="day-title">Day 5 - 6/16 (二)</span>
-            <span class="day-location">📍 合掌村 ➜ 名古屋還車</span>
+            <div class="day-title">Day 5 | 6/16 (二) 童話合掌村 & 告別自駕愛車</div>
+            <div class="day-mode"><span class="badge badge-drive">自駕模式 ➜ 傍晚還車</span></div>
         </div>
-        <div class="timeline">
-            <div class="event">
-                <div class="time">09:30 - 11:00</div>
-                <div class="content">
-                    <div class="activity">🚗 移動至合掌村</div>
-                    <div class="details">車程約 1 小時 15 分。</div>
-                </div>
+        <div class="time-block">
+            <div class="time-label">09:30 - 10:45</div>
+            <div class="activity-name">🚗 富山 ➜ 白川鄉</div>
+            <div class="activity-desc">行駛東海北陸自動車道，車程約 1 小時 15 分鐘。過路費約 ¥2,500。</div>
+        </div>
+        <div class="time-block">
+            <div class="time-label">11:00 - 14:00</div>
+            <div class="activity-name">🏠 白川鄉合掌村漫遊</div>
+            <div class="activity-desc">欣賞傳統合掌造建築。務必帶小孩搭乘付費接駁車上「城山天守閣展望台」，從高處俯瞰整個宛如童話故事的村落。中午在村內品嚐炭烤飛驒牛。</div>
+        </div>
+        <div class="time-block important">
+            <div class="time-label">14:00 - 17:30</div>
+            <div class="activity-name">🚗 返回名古屋 & 完美還車任務</div>
+            <div class="activity-desc">
+                從合掌村開回名古屋市區，車程約 2.5 小時（過路費約 ¥5,000）。<br>
+                <b>標準還車SOP：</b>1. 先開導航到名古屋市區下榻飯店門口 ➜ 2. 媽媽、兩個小孩與所有大型行李（推車）在飯店大廳卸貨休息 ➜ 3. 爸爸獨自開車去加滿油 ➜ 4. 17:30 前開去名古屋站還車 ➜ 5. 爸爸走路或搭地鐵回飯店大會合。
             </div>
-            <div class="event">
-                <div class="time">11:00 - 14:00</div>
-                <div class="content">
-                    <div class="activity">🏠 白川鄉合掌村</div>
-                    <div class="details">參觀合掌造，必去展望台拍照，享用飛驒牛午餐。</div>
-                </div>
-            </div>
-            <div class="event">
-                <div class="time">14:00 - 16:30</div>
-                <div class="content">
-                    <div class="activity">🚗 返回名古屋 (還車)</div>
-                    <div class="details">車程約 2.5 小時。先放家人行李到飯店，再去還車。</div>
-                </div>
-            </div>
-            <div class="stay-info">
-                🏨 住宿：名古屋市區 (建議連住4晚，榮或名古屋站)
-            </div>
+        </div>
+        <div class="hotel-box">
+            🏠 <b>今日住宿：</b>名古屋市區飯店（建議連住 4 晚於 <b>榮 (Sakae)</b> 或 <b>名古屋車站</b> 周邊）
         </div>
     </div>
 
-    <div class="day-card train-mode">
+    <!-- Day 6 -->
+    <div class="day-section">
         <div class="day-header">
-            <span class="day-title">Day 6 - 6/17 (三)</span>
-            <span class="day-location">📍 犬山城 & 榮商圈採買</span>
+            <div class="day-title">Day 6 | 6/17 (三) 國寶犬山城鐵道遊 & 榮商圈親子大採購</div>
+            <div class="day-mode"><span class="badge badge-train">大眾運輸 (名鐵+地鐵)</span></div>
         </div>
-        <div class="timeline">
-            <div class="event">
-                <div class="time">10:00 - 13:30</div>
-                <div class="content">
-                    <div class="activity">🏯 犬山城 + 城下町</div>
-                    <div class="details">搭乘名鐵特急。參觀古城，城下町邊走邊吃。</div>
-                </div>
+        <div class="time-block">
+            <div class="time-label">09:30 - 13:30</div>
+            <div class="activity-name">🏯 犬山城與城下町老街</div>
+            <div class="activity-desc">
+                於名鐵名古屋站購買「犬山城下町套票」。搭乘名鐵犬山線特急列車僅需 30 分鐘即可抵達<b>犬山站</b>。<br>
+                從西口出來沿著「本町通」老街邊吃邊逛前往城堡，推車推到城門口收起。犬山城木製天守閣階梯接近 <span class="info-highlight">60度</span> 極度陡峭，抱2歲幼童時必須改用背巾，注意腳下安全。午餐於老街享用醬油糰子、飛驒牛握壽司。
             </div>
-            <div class="event">
-                <div class="time">14:30 - 18:30</div>
-                <div class="content">
-                    <div class="activity">🛍️ 榮 (Sakae) 商圈大採購</div>
-                    <div class="details">
-                        1. <b>松坂屋：</b>寶可夢中心(5F)、迪士尼商店(8F)<br>
-                        2. <b>綠洲21：</b>橡子共和國(吉卜力)<br>
-                        3. <b>唐吉訶德：</b>藥妝零食補貨
-                    </div>
-                </div>
+        </div>
+        <div class="time-block important">
+            <div class="time-label">14:30 - 18:30</div>
+            <div class="activity-name">🛍️ 榮 (Sakae) 商圈黃金採買 4 小時</div>
+            <div class="activity-desc">
+                搭電車回到市中心「榮」商圈，開啟三大動漫IP與伴手禮黃金動線：<br>
+                1. <b>松坂屋百貨 (5F & 8F)：</b>直奔5樓的 <b>寶可夢中心 (Pokemon Center)</b> 滿足6歲大寶，再攻8樓的迪士尼商店 (Disney Store)。<br>
+                2. <b>綠洲21 (Oasis 21) B1：</b>前往官方吉卜力專賣店 <b>「橡子共和國」</b> 採購龍貓文具與貓巴士周邊，門口還可以與超大龍貓合照。<br>
+                3. <b>驚安殿堂唐吉訶德：</b>綠洲21正對面，一次掃齊所有日本藥妝、零食、貼布。
             </div>
-            <div class="stay-info">
-                🏨 住宿：名古屋市區
-            </div>
+        </div>
+        <div class="hotel-box">
+            🏠 <b>今日住宿：</b>名古屋市區飯店 (連住)
         </div>
     </div>
 
-    <div class="day-card train-mode">
+    <!-- Day 7 -->
+    <div class="day-section">
         <div class="day-header">
-            <span class="day-title">Day 7 - 6/18 (四)</span>
-            <span class="day-location">📍 東山動植物園</span>
+            <div class="day-title">Day 7 | 6/18 (四) 東山動植物園與型男猩猩相見歡</div>
+            <div class="day-mode"><span class="badge badge-train">大眾運輸 (地鐵)</span></div>
         </div>
-        <div class="timeline">
-            <div class="event">
-                <div class="time">10:00 - 16:00</div>
-                <div class="content">
-                    <div class="activity">🦍 東山動植物園</div>
-                    <div class="details">搭乘地鐵東山線。必看帥哥大猩猩、無尾熊，兒童動物園摸天竺鼠。</div>
-                </div>
+        <div class="time-block">
+            <div class="time-label">10:00 - 16:00</div>
+            <div class="activity-name">🦍 東山動植物園</div>
+            <div class="activity-desc">
+                從市區搭乘地鐵東山線至「東山公園站」下車即達。<br>
+                <b>行程亮點：</b>北園必看全日本最有名、眼神極犀利的「型男大猩猩 Shabani」，接著看可愛的無尾熊館。下午帶孩子前往專為幼童設計的「兒童動物園 (こども動物園)」，2歲和6歲小孩都可以排隊親手觸摸溫馴的天竺鼠、羊咩咩。<br>
+                <b>⚠️ 爸媽注意：</b>園區廣闊且富含坡度，全日步行距離長，請務必推嬰兒車，以便下午小孩隨時斷電午睡。
             </div>
-            <div class="stay-info">
-                🏨 住宿：名古屋市區
-            </div>
+        </div>
+        <div class="hotel-box">
+            🏠 <b>今日住宿：</b>名古屋市區飯店 (連住)
         </div>
     </div>
 
-    <div class="day-card train-mode">
+    <!-- Day 8 -->
+    <div class="day-section">
         <div class="day-header">
-            <span class="day-title">Day 8 - 6/19 (五)</span>
-            <span class="day-location">📍 名古屋港水族館</span>
+            <div class="day-title">Day 8 | 6/19 (五) 名古屋港海洋治癒系大終章</div>
+            <div class="day-mode"><span class="badge badge-train">大眾運輸 (地鐵)</span></div>
         </div>
-        <div class="timeline">
-            <div class="event">
-                <div class="time">10:00 - 15:30</div>
-                <div class="content">
-                    <div class="activity">🐬 名古屋港水族館 + 南極觀測船</div>
-                    <div class="details">搭乘地鐵名港線。看虎鯨表演、南極企鵝，參觀橘色破冰船。</div>
-                </div>
+        <div class="time-block">
+            <div class="time-label">10:00 - 14:00</div>
+            <div class="activity-name">🐬 名古屋港水族館</div>
+            <div class="activity-desc">
+                搭乘地鐵名城線轉名港線，至終點「名古屋港站」下車。
+                <b>北館：</b>觀賞全日本唯二的珍貴<b>虎鯨 (殺人鯨)</b>、露天看台海豚大型躍水秀（主看台備有巨大遮陽棚，不怕曬傷）。<br>
+                <b>南館：</b>探索南極之旅、企鵝水下隧道。中午至隔壁的「Jetty」美食街，選擇多樣、備有大量兒童座椅。
             </div>
-            <div class="stay-info">
-                🏨 住宿：名古屋市區 (最後整理行李)
-            </div>
+        </div>
+        <div class="time-block">
+            <div class="time-label">14:00 - 16:00</div>
+            <div class="activity-name">🚢 南極觀測船富士號 (Fuji)</div>
+            <div class="activity-desc">水族館正對面，停泊著貨真價實去過南極的橘色大破冰船。帶 6 歲大寶登船探險，觀看直升機甲板、艦橋控舵室、船員生活蠟像複刻，滿足小男孩對大船與冒險的無限憧憬。</div>
+        </div>
+        <div class="time-block important">
+            <div class="time-label">晚上</div>
+            <div class="activity-name">🧳 行李最後總打包</div>
+            <div class="activity-desc">回飯店周邊吃頓豐盛晚餐（如手羽先唐揚或味噌豬排），早點回飯店將前半段自駕伴手禮、恐龍模型、寶可夢公仔、藥妝全部妥善打包進大行李箱，準備明早衝機場。</div>
+        </div>
+        <div class="hotel-box">
+            🏠 <b>今日住宿：</b>名古屋市區飯店 (最後一晚)
         </div>
     </div>
 
-    <div class="day-card train-mode">
+    <!-- Day 9 -->
+    <div class="day-section">
         <div class="day-header">
-            <span class="day-title">Day 9 - 6/20 (六)</span>
-            <span class="day-location">📍 返台</span>
+            <div class="day-title">Day 9 | 6/20 (六) 滿載回憶歸國</div>
+            <div class="day-mode"><span class="badge badge-train">特急列車 ➜ 機場</span></div>
         </div>
-        <div class="timeline">
-            <div class="event">
-                <div class="time">07:30</div>
-                <div class="content">
-                    <div class="activity">🚆 前往中部國際機場</div>
-                    <div class="details">搭乘名鐵 μ-SKY 特急 (約28分)。</div>
-                </div>
-            </div>
-            <div class="event">
-                <div class="time">09:00</div>
-                <div class="content">
-                    <div class="activity">✈️ 班機起飛</div>
-                    <div class="details">逛機場蝦餅店，平安回家。</div>
-                </div>
-            </div>
+        <div class="time-block">
+            <div class="time-label">07:30 - 08:15</div>
+            <div class="activity-name">🚆 名鐵特急 μ-SKY 全車指定席</div>
+            <div class="activity-desc">從名鐵名古屋站搭乘最頂級的 <b>μ-SKY 特急列車</b>，只需高速飛行 28 分鐘便安全、舒適抵達中部國際機場，完全避開帶大行李與兩個小孩擠通勤電車的惡夢。</div>
+        </div>
+        <div class="time-block important">
+            <div class="time-label">08:15 - 09:30</div>
+            <div class="activity-name">🦐 機場最後大衝刺：綜合補貨</div>
+            <div class="activity-desc">辦理完行李託運並拿到登機證後，先不要急著過安檢。直奔管制區外的名古屋元祖級土產店<b>「蝦餅之鄉 (えびせんべいの里)」</b>進行箱購級的最後補貨，隨後安心登機。</div>
+        </div>
+        <div class="time-block">
+            <div class="time-label">上午</div>
+            <div class="activity-name">✈️ 班機起飛返回台灣</div>
+            <div class="activity-desc">平安抵達台灣，圓滿結束結合雙樂園、恐龍、雪牆、古城與三大動漫IP的夢幻 10 天日本親子之旅！</div>
         </div>
     </div>
 
+    <footer>
+        💡 溫馨提示：本網頁格式已針對列印與手機閱讀進行最佳化。若想隨身攜帶，可於瀏覽器按 <b>Ctrl + P</b> 選擇「另存為 PDF」儲存至手機。
+    </footer>
 </div>
 
 </body>
